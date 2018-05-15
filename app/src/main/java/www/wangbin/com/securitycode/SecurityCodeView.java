@@ -2,6 +2,7 @@ package www.wangbin.com.securitycode;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Vibrator;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -9,6 +10,8 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
@@ -180,10 +183,15 @@ public class SecurityCodeView extends RelativeLayout {
     /**
      * 清空输入内容
      */
-    public void clearEditText() {
+    public void clearEditText(Context context) {
         mContent = "";
         mIsClear = true;
+        //手机震动
+        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(300);
+        Animation shake = AnimationUtils.loadAnimation(context, R.anim.input_error_shake);
         for (int i = count - 1; i >= 0; i--) {
+            editViews[i].startAnimation(shake);
             editViews[i].setText("");
             if (i == 0) {
                 editViews[i].setFocusableInTouchMode(true);

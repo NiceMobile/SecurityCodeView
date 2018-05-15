@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements SecurityCodeView.
     @Override
     public void inputComplete(String code) {
         //验证码输入完成回调处理
-        mPhoneCodeEdit.clearEditText();
+        mPhoneCodeEdit.clearEditText(this);
         mPhoneError.setVisibility(View.VISIBLE);
         mPhoneError.setText("验证码错误，请重新输入！");
     }

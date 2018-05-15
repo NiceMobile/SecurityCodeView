@@ -10,7 +10,8 @@
 
         <www.wangbin.com.securitycode.BackEditText
             android:id="@+id/item_code_iv1"
-            style="@style/text_editStyle" />
+            style="@style/text_editStyle"
+            android:layout_marginLeft="5dp"/>
 
         <View
             android:layout_width="0dp"
@@ -53,7 +54,8 @@
 
         <www.wangbin.com.securitycode.BackEditText
             android:id="@+id/item_code_iv6"
-            style="@style/text_editStyle" />
+            style="@style/text_editStyle"
+            android:layout_marginRight="5dp"/>
 
     </LinearLayout>
 </RelativeLayout>
