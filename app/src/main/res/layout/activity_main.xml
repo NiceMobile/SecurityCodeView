@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <www.wangbin.com.securitycode.SecurityCodeView
+        android:id="@+id/login_code_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/login_phone_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text=" 手机号有误，请重新输入"
+        android:textColor="@color/text_red_color"
+        android:textSize="14dp"
+        android:visibility="invisible"/>
+</LinearLayout>
